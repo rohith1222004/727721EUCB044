@@ -7,6 +7,15 @@ function valuetext(value: number) {
 }
 
 export default function DiscreteSliderSteps() {
+  const [value, setValue] = React.useState<number>(1);
+
+  const handleChange = (event: Event, newValue: number | number[]) => {
+    if (typeof newValue === 'number') {
+      setValue(newValue);
+      console.log('Slider Value:', newValue);
+    }
+  };
+
   return (
     <Box sx={{ width: 100 }}>
       <Slider
@@ -18,6 +27,8 @@ export default function DiscreteSliderSteps() {
         min={0}
         max={100000}
         valueLabelDisplay="auto"
+        value={value}
+        onChange={handleChange}
       />
     </Box>
   );

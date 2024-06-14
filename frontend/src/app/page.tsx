@@ -4,7 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Button, Slider } from '@mui/material';
+import { Button, Input, Slider } from '@mui/material';
 import axios from 'axios';
 import { useEffect } from 'react';
 import Card from '@mui/material/Card';
@@ -13,6 +13,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import { useState } from 'react';
+
 interface Product {
   availability: string;
   discount: number;
@@ -96,7 +97,6 @@ export default function Home() {
         <h2>Price</h2>
         <Slider/>
       </div>
-
       <div>
         <Button onClick={handleSubmit} variant="contained">Submit</Button>
       </div>
